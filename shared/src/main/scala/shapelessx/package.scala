@@ -10,6 +10,13 @@ package object shapelessx {
     }
   }
 
+
+  implicit def taggedIntOrdering[Tag]: Ordering[Int @@ Tag] = Ordering.by(_.toInt)
+
+  implicit def taggedLongOrdering[Tag]: Ordering[Long @@ Tag] = Ordering.by(_.toLong)
+
+  implicit def taggedDoubleOrdering[Tag]: Ordering[Double @@ Tag] = Ordering.by(_.toDouble)
+
 }
 
 
